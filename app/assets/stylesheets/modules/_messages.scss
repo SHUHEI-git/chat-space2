@@ -1,0 +1,115 @@
+@import "./config/variable";
+@import "./mixin/displayflex";
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+
+  @import "./modules/chat-side";
+
+  .main {
+    width: calc(100vw - 300px);
+    background-color: $letter_color;
+    position: relative;
+    &__header {
+      background-color: $letter_color;
+      border-bottom: 1px solid #eeeeee;
+      height: 100px;
+      @include display_space-between();
+      padding: 0 40px;
+      &__left__group--name {
+        font-size: 20px;
+        color: #333333;
+        padding: 35px 0 15px 0;
+      }
+      &__left__group--member {
+        font-size: 12px;
+        color: #999999;
+      }
+      &__right {
+        padding-top: 30px;
+        
+        &--btn{
+          display: block;
+          width: 72px;
+          height: 40px;
+          line-height: 40px;
+          padding: 0 20px;
+          color: #38aef0;
+          font-size: 16px;
+          text-decoration: none;
+          border: 1px solid #38aef0;
+        }
+      }
+    }
+    &__messages {
+      background-color: #fafafa;
+      height: calc(100vh - 100px - 90px);
+      padding: 35px 40px;
+      &__box {
+        margin-bottom: 46px;
+        &__name {
+          display: inline-block;
+          color: #333333;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__time {
+          display: inline-block;
+          vertical-align: top;
+          color: #999999;
+          font-size: 12px;
+        }
+        &__message {
+          color: #434A54;
+          font-size: 14px;
+          margin-top: 12px;
+        }
+      }
+    }
+    .form {
+      position: absolute;
+      bottom: 0;
+      background-color: #d2d2d2;
+      height: 90px;
+      width: calc(100vw - 300px);
+      padding: 20px 40px;
+      .new_message {
+        width: 100%;
+        @include display_space-between();
+        &__box {
+          background-color: $letter_color;
+          width: calc(100% - 115px);
+          position: relative;
+          @include display_space-between();
+          &__input {
+            height: 50px;
+            width: 100%;
+            padding: 0 40px 0 10px;
+            border: none;
+          }
+          &__image {
+            position: absolute;
+            right:  10px;
+            line-height: 50px;
+            font-size: 1.3rem;
+            .box__image__file {
+              display: none;
+            }
+          }
+        }
+        &__btn {
+          width: 100px;
+          background-color: #38AEF0;
+          color: $letter_color;
+          line-height: 50px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
