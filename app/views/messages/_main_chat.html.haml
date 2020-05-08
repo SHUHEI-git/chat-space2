@@ -1,4 +1,41 @@
 .main
   .main__header
+    .main__header__left
+      %ul.main__header__left__group
+        %li.main__header__left__group--name
+          team_fish
+        %li.main__header__left__group--member
+          ota
+    .main__header__right
+      = link_to "#", class: "main__header__right--btn" do
+        Edit
   .main__messages
+    .main__messages__box
+      %p.main__messages__box__name
+        ota
+      %p.main__messages__box__time
+        2020/05/08(Fri) 09:30:10
+      %p.main__messages__box__message
+        おはよう
+    .main__messages__box
+      %p.main__messages__box__name
+        ota
+      %p.main__messages__box__time
+        2020/05/08(Fri) 11:30:10
+      %p.main__messages__box__message
+        こんにちは
+    .main__messages__box
+      %p.main__messages__box__name
+        ota
+      %p.main__messages__box__time
+        2020/05/08(Fri) 18:30:10
+      %p.main__messages__box__message
+        こんばんは
   .form
+    .new_message
+      .new_message__box
+        %input{type: "text", placeholder: "type a message", class: "new_message__box__input"}
+        %label{class: "new_message__box__image"}
+          = icon('far', 'image')
+          %input{type: "file", class: "box__image__file"}
+      %input{type: "submit", value: "Send", class: "new_message__btn"}
