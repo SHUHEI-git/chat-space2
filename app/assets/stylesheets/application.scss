@@ -1,8 +1,10 @@
 @import "reset";
+@import "config/colors";
+@import "./config/variable";
+@import "./mixin/displayflex";
 @import "modules/messages";
 @import "./modules/chat-side";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "./config/variable";
-@import "./mixin/displayflex";
 @import "./modules/user.scss";
+@import "modules/flash";
