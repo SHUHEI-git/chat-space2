@@ -5,24 +5,16 @@
         = current_user.name
       %ul.side__header__box__list
         %li.side__header__box__list--new_group
-          = link_to "#", class: "list__btn" do
+          = link_to new_group_path, class: "list__btn" do
             = icon('far', 'edit', class: "list__btn--icon")
         %li.side__header__box__list--edit_account
-          = link_to edit_user_path(current_user), class: "list__btn" do
+          = link_to edit_user_path(current_user.id), class: "list__btn" do
             = icon('fas', 'cog', class: "list__btn--icon")
   .side__left
-    .side__left__group
-      %h2.side__left__group--name
-        team_fish
-      %p.side__left__group--message
-        まだ季節ではありません
-    .side__left__group
-      %h2.side__left__group--name
-        team_meat
-      %p.side__left__group--message
-        焼肉したい
-    .side__left__group
-      %h2.side__left__group--name
-        team_vegetables
-      %p.side__left__group--message
-        味噌汁といえば白菜
+    - current_user.groups.each do |group|
+      .side__left__group
+        = link_to '#' do
+          %p.side__left__group--name
+            = group.name
+          %p.side__left__group--message
+            メッセージはありません。
