@@ -12,7 +12,7 @@
             = icon('fas', 'cog', class: "list__btn--icon")
   .side__left
     - current_user.groups.each do |group|
-      = link_to group_messages_path(group) do
+      = link_to group_messages_path(group), class: "group_message" do
         .side__left__group
           %p.side__left__group--name
             = group.name

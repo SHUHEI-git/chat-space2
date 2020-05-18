@@ -31,13 +31,14 @@
   .side__left {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
-    & a {
+    padding: 20px 20px 0 20px;
+    .group_message {
       text-decoration: none;
       .side__left__group {
-        height: 91px;
+        // height: 91px;
         width: 100%;
         color: #ffffff;
-        padding: 20px;
+        margin-bottom: 40px;
         &--name {
           font-size: 15px;
           margin-bottom: 5px;
